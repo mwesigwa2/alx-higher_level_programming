@@ -1,8 +1,17 @@
 #!/usr/bin/python3
-"""python class that does the same as python bytecode"""
+"""import the math module"""
 import math
 
 
-class _MagicClass:
+class MagicClass:
     """class that does the same as python bytecode"""
-    def __init__(self)
+    def __init__(self, radius):
+        if not isinstance(radius, (int, float)):
+            raise TypeError('radius must be a number')
+        self.__radius = radius
+
+    def area(self):
+        return math.pi * self.__radius ** 2
+
+    def circumference(self):
+        return 2 * math.pi * self.__radius
