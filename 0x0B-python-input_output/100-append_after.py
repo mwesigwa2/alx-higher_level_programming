@@ -4,10 +4,11 @@
 
 def append_after(filename="", search_string="", new_string=""):
     """func adds new string if certain stringis found"""
-    with open(filename, 'r+', encoding='utf-8') as file:
-        read_lines = file.readlines()
-        file.seek(0)
-        for i in read_lines:
-            file.write(i)
-            if search_string in i:
-                file.write(new_string + '\n')
+    text = ""
+    with open(filename) as f:
+        for line in f:
+            text += line
+            if search_string in line:
+                text += new_string
+    with open(filename, 'w') as a_file:
+        a_file.write(text)
