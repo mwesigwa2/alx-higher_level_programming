@@ -97,7 +97,7 @@ class Rectangle(Base):
                 f"{self.__width}/{self.__height}"
                 )
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """updates attributes of rectangle"""
         if args:
             if len(args) >= 1:
